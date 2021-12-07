@@ -10,11 +10,12 @@ namespace EX28
         private float legsB;  // 動物Bの脚の数
         public float heads;  // 全部の頭の数
         public float legs;// 全部の脚の数
-        public float HeadsA// 動物Aの頭数（計算で求められる）
+
+        public float HeadsA
         {
             get
             {
-                return heads - HeadsB;
+                 return heads - HeadsB;
             }
         }
 
