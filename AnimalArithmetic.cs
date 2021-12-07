@@ -18,8 +18,7 @@ namespace EX28
             }
         }
 
-        //private float headsB;// 動物Bの頭数（計算で求められる）
-        public float HeadsB
+        public float HeadsB// 動物Bの頭数（計算で求められる）
         {
             get
             {               
