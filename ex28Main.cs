@@ -14,7 +14,7 @@ namespace EX28
                 Constructor.Input("動物AとBの合計の頭の数："),
                   Constructor.Input("動物AとBの合計の脚の数："));
 
-            Console.WriteLine($"動物Aの数{animalArithmetic.HeadsA},動物Bの数{animalArithmetic.HeadsB}");
+            Console.WriteLine($"動物Aの数{animalArithmetic.headsA},動物Bの数{animalArithmetic.headsB}");
         }
     }
 }

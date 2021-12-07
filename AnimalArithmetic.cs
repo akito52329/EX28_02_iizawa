@@ -8,22 +8,58 @@ namespace EX28
     {
         private float legsA;  // 動物Aの脚の数
         private float legsB;  // 動物Bの脚の数
-        public float heads;  // 全部の頭の数
-        public float legs;// 全部の脚の数
-
-        public float HeadsA
+        private float _heads = 0;
+        public float heads// 全部の頭の数
         {
             get
             {
-                 return heads - HeadsB;
+                return _heads;
+            }
+            set
+            {
+                if (_heads != value)
+                {
+                    _heads = value;
+                    GetHeads();
+                }
             }
         }
 
-        public float HeadsB// 動物Bの頭数（計算で求められる）
+        private float _legs = 0;
+        public float legs// 全部の脚の数
+        {
+            get
+            {
+                return _legs;
+            }
+            set
+            {
+                if (_legs != value)
+                {
+                    _legs = value;
+                    GetHeads();
+                }
+
+            }
+        }
+    
+
+
+        private float _headsA;// 動物Aの頭数（計算で求められる）
+        public float headsA
+        {
+            get
+            {
+                return _headsA;
+            }
+        }
+
+        private float _headsB;// 動物Aの頭数（計算で求められる）
+        public float headsB// 動物Bの頭数（計算で求められる）
         {
             get
             {               
-                return (legs - heads * legsA) / (legsB - legsA);
+                return _headsB;
             }
         }
 
@@ -47,5 +83,12 @@ namespace EX28
             heads = h;
             legs = l;
         }
+
+        void GetHeads()
+        {
+            _headsB = (legs - heads * legsA) / (legsB - legsA);
+            _headsA = heads - headsB;
+        }
+
     }
 }
