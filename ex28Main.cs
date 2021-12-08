@@ -6,15 +6,26 @@ namespace EX28
     {
         static void Main(string[] args)
         {
-            AnimalArithmetic animalArithmetic = new AnimalArithmetic(
-                  Constructor.Input("動物Aの脚の数："),
-                  Constructor.Input("動物Bの脚の数："));
+            while (true)
+            {
+                AnimalArithmetic animalArithmetic = new AnimalArithmetic(
+                      Constructor.InputLegs("動物Aの脚の数："),
+                      Constructor.InputLegs("動物Bの脚の数："));
 
-            animalArithmetic.SetHeadsLegs(
-                Constructor.Input("動物AとBの合計の頭の数："),
-                  Constructor.Input("動物AとBの合計の脚の数："));
+                animalArithmetic.SetHeadsLegs(
+                    Constructor.Input("動物AとBの合計の頭の数："),
+                      Constructor.Input("動物AとBの合計の脚の数："));
 
-            Console.WriteLine($"動物Aの数{animalArithmetic.headsA},動物Bの数{animalArithmetic.headsB}");
+                if(Constructor.AnswerCheck(animalArithmetic.headsA,animalArithmetic.headsB))
+                {
+                    Console.WriteLine($"動物Aの数{animalArithmetic.headsA},動物Bの数{animalArithmetic.headsB}");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine($"入力が間違っています。やり直してください。");
+                }
+            }
         }
     }
 }
