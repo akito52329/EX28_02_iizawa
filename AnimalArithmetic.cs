@@ -87,7 +87,7 @@ namespace EX28
         void GetHeads()
         {
             _headsB = (legs - heads * legsA) / (legsB - legsA);
-            _headsA = heads - headsB;
+            _headsA = heads - _headsB;
         }
 
     }
